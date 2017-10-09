@@ -4,7 +4,6 @@ import {
   QueryRenderer
 } from 'react-relay'
 import Layout from './Layout'
-import WidgetList from './WidgetList'
 
 export default class App extends Component {
   render() {

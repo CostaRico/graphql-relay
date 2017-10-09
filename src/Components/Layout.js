@@ -23,9 +23,10 @@ class Layout extends Component {
 
 const layoutContainer = createFragmentContainer(Layout, {
   viewer: graphql`
-    fragment Layout_viewer on User {
-      id
-      name
+    fragment Layout_viewer on Viewer {
+      Post(id: "cj8kjyidn2odi0136i8v87a2a"){
+        name
+      }
     }
   `
 })

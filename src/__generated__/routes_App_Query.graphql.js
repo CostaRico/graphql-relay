@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 065c35f3034130bb6f2859e5f7b8a28e
+ * @relayHash 6a87779e587fd20cd42689dff734997d
  */
 
 /* eslint-disable */
@@ -9,40 +9,24 @@
 
 /*::
 import type {ConcreteBatch} from 'relay-runtime';
-export type routes_App_QueryResponse = {|
-  +viewer: ?{| |};
+export type Routes_App_QueryResponse = {|
+  +viewer: {| |};
 |};
 */
 
 
 /*
-query routes_App_Query {
+query Routes_App_Query {
   viewer {
     ...Layout_viewer
-    ...WidgetList_viewer
     id
   }
 }
 
-fragment Layout_viewer on User {
-  id
-  name
-}
-
-fragment WidgetList_viewer on User {
-  widgets(first: 3) {
-    edges {
-      node {
-        id
-        name
-        __typename
-      }
-      cursor
-    }
-    pageInfo {
-      endCursor
-      hasNextPage
-    }
+fragment Layout_viewer on Viewer {
+  Post(id: "cj8kjyidn2odi0136i8v87a2a") {
+    name
+    id
   }
 }
 */
@@ -52,13 +36,13 @@ const batch /*: ConcreteBatch*/ = {
     "argumentDefinitions": [],
     "kind": "Fragment",
     "metadata": null,
-    "name": "routes_App_Query",
+    "name": "Routes_App_Query",
     "selections": [
       {
         "kind": "LinkedField",
         "alias": null,
         "args": null,
-        "concreteType": "User",
+        "concreteType": "Viewer",
         "name": "viewer",
         "plural": false,
         "selections": [
@@ -66,33 +50,28 @@ const batch /*: ConcreteBatch*/ = {
             "kind": "FragmentSpread",
             "name": "Layout_viewer",
             "args": null
-          },
-          {
-            "kind": "FragmentSpread",
-            "name": "WidgetList_viewer",
-            "args": null
           }
         ],
         "storageKey": null
       }
     ],
-    "type": "RootQueryType"
+    "type": "Query"
   },
   "id": null,
   "kind": "Batch",
   "metadata": {},
-  "name": "routes_App_Query",
+  "name": "Routes_App_Query",
   "query": {
     "argumentDefinitions": [],
     "kind": "Root",
-    "name": "routes_App_Query",
+    "name": "Routes_App_Query",
     "operation": "query",
     "selections": [
       {
         "kind": "LinkedField",
         "alias": null,
         "args": null,
-        "concreteType": "User",
+        "concreteType": "Viewer",
         "name": "viewer",
         "plural": false,
         "selections": [
@@ -104,127 +83,49 @@ const batch /*: ConcreteBatch*/ = {
             "storageKey": null
           },
           {
-            "kind": "ScalarField",
-            "alias": null,
-            "args": null,
-            "name": "name",
-            "storageKey": null
-          },
-          {
-            "kind": "LinkedField",
-            "alias": null,
-            "args": [
-              {
-                "kind": "Literal",
-                "name": "first",
-                "value": 3,
-                "type": "Int"
-              }
-            ],
-            "concreteType": "WidgetConnection",
-            "name": "widgets",
-            "plural": false,
+            "kind": "InlineFragment",
+            "type": "Viewer",
             "selections": [
               {
                 "kind": "LinkedField",
                 "alias": null,
-                "args": null,
-                "concreteType": "WidgetEdge",
-                "name": "edges",
-                "plural": true,
-                "selections": [
+                "args": [
                   {
-                    "kind": "LinkedField",
-                    "alias": null,
-                    "args": null,
-                    "concreteType": "Widget",
-                    "name": "node",
-                    "plural": false,
-                    "selections": [
-                      {
-                        "kind": "ScalarField",
-                        "alias": null,
-                        "args": null,
-                        "name": "id",
-                        "storageKey": null
-                      },
-                      {
-                        "kind": "ScalarField",
-                        "alias": null,
-                        "args": null,
-                        "name": "name",
-                        "storageKey": null
-                      },
-                      {
-                        "kind": "ScalarField",
-                        "alias": null,
-                        "args": null,
-                        "name": "__typename",
-                        "storageKey": null
-                      }
-                    ],
-                    "storageKey": null
-                  },
-                  {
-                    "kind": "ScalarField",
-                    "alias": null,
-                    "args": null,
-                    "name": "cursor",
-                    "storageKey": null
+                    "kind": "Literal",
+                    "name": "id",
+                    "value": "cj8kjyidn2odi0136i8v87a2a",
+                    "type": "ID"
                   }
                 ],
-                "storageKey": null
-              },
-              {
-                "kind": "LinkedField",
-                "alias": null,
-                "args": null,
-                "concreteType": "PageInfo",
-                "name": "pageInfo",
+                "concreteType": "Post",
+                "name": "Post",
                 "plural": false,
                 "selections": [
                   {
                     "kind": "ScalarField",
                     "alias": null,
                     "args": null,
-                    "name": "endCursor",
+                    "name": "name",
                     "storageKey": null
                   },
                   {
                     "kind": "ScalarField",
                     "alias": null,
                     "args": null,
-                    "name": "hasNextPage",
+                    "name": "id",
                     "storageKey": null
                   }
                 ],
-                "storageKey": null
+                "storageKey": "Post{\"id\":\"cj8kjyidn2odi0136i8v87a2a\"}"
               }
-            ],
-            "storageKey": "widgets{\"first\":3}"
-          },
-          {
-            "kind": "LinkedHandle",
-            "alias": null,
-            "args": [
-              {
-                "kind": "Literal",
-                "name": "first",
-                "value": 3,
-                "type": "Int"
-              }
-            ],
-            "handle": "connection",
-            "name": "widgets",
-            "key": "WidgetList_widgets",
-            "filters": null
+            ]
           }
         ],
         "storageKey": null
       }
     ]
   },
-  "text": "query routes_App_Query {\n  viewer {\n    ...Layout_viewer\n    ...WidgetList_viewer\n    id\n  }\n}\n\nfragment Layout_viewer on User {\n  id\n  name\n}\n\nfragment WidgetList_viewer on User {\n  widgets(first: 3) {\n    edges {\n      node {\n        id\n        name\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      endCursor\n      hasNextPage\n    }\n  }\n}\n"
+  "text": "query Routes_App_Query {\n  viewer {\n    ...Layout_viewer\n    id\n  }\n}\n\nfragment Layout_viewer on Viewer {\n  Post(id: \"cj8kjyidn2odi0136i8v87a2a\") {\n    name\n    id\n  }\n}\n"
 };
 
 module.exports = batch;

@@ -12,15 +12,18 @@ function fetchQuery(
   cacheConfig,
   uploadables
 ) {
-  return fetch('/graphql', {
+  return fetch('https://api.graph.cool/relay/v1/cj07pfjjj1nbq0148rutjhxd5', {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
-      'Content-Type': 'application/graphql',
+      'Content-Type': 'application/json',
     },
-    body: operation.text
+    body: JSON.stringify({query: operation.text})
   }).then(response => {
     return response.json();
+  }).then(data=>{
+    debugger;
+    return data;
   });
 }
 

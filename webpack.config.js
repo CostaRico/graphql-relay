@@ -14,7 +14,8 @@ module.exports = {
     historyApiFallback: true,
     port: 3000,
     proxy: {
-      "/graphql": "http://localhost:4000",
+      "/graphql": "https://api.graph.cool/simple/v1/cj07pfjjj1nbq0148rutjhxd5",
+      secure: true
     }
   },
   devtool: 'inline-source-map',

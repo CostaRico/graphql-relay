@@ -9,8 +9,9 @@
 /*::
 import type {ConcreteFragment} from 'relay-runtime';
 export type Layout_viewer = {|
-  +id: string;
-  +name: ?string;
+  +Post: ?{|
+    +name: ?string;
+  |};
 |};
 */
 
@@ -22,21 +23,32 @@ const fragment /*: ConcreteFragment*/ = {
   "name": "Layout_viewer",
   "selections": [
     {
-      "kind": "ScalarField",
+      "kind": "LinkedField",
       "alias": null,
-      "args": null,
-      "name": "id",
-      "storageKey": null
-    },
-    {
-      "kind": "ScalarField",
-      "alias": null,
-      "args": null,
-      "name": "name",
-      "storageKey": null
+      "args": [
+        {
+          "kind": "Literal",
+          "name": "id",
+          "value": "cj8kjyidn2odi0136i8v87a2a",
+          "type": "ID"
+        }
+      ],
+      "concreteType": "Post",
+      "name": "Post",
+      "plural": false,
+      "selections": [
+        {
+          "kind": "ScalarField",
+          "alias": null,
+          "args": null,
+          "name": "name",
+          "storageKey": null
+        }
+      ],
+      "storageKey": "Post{\"id\":\"cj8kjyidn2odi0136i8v87a2a\"}"
     }
   ],
-  "type": "User"
+  "type": "Viewer"
 };
 
 module.exports = fragment;
