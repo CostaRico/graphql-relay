@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 6a87779e587fd20cd42689dff734997d
+ * @relayHash 100ced9ca08c8858865d2b938c7fc103
  */
 
 /* eslint-disable */
@@ -9,14 +9,14 @@
 
 /*::
 import type {ConcreteBatch} from 'relay-runtime';
-export type Routes_App_QueryResponse = {|
+export type Routes_QueryResponse = {|
   +viewer: {| |};
 |};
 */
 
 
 /*
-query Routes_App_Query {
+query Routes_Query {
   viewer {
     ...Layout_viewer
     id
@@ -36,7 +36,7 @@ const batch /*: ConcreteBatch*/ = {
     "argumentDefinitions": [],
     "kind": "Fragment",
     "metadata": null,
-    "name": "Routes_App_Query",
+    "name": "Routes_Query",
     "selections": [
       {
         "kind": "LinkedField",
@@ -60,11 +60,11 @@ const batch /*: ConcreteBatch*/ = {
   "id": null,
   "kind": "Batch",
   "metadata": {},
-  "name": "Routes_App_Query",
+  "name": "Routes_Query",
   "query": {
     "argumentDefinitions": [],
     "kind": "Root",
-    "name": "Routes_App_Query",
+    "name": "Routes_Query",
     "operation": "query",
     "selections": [
       {
@@ -125,7 +125,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query Routes_App_Query {\n  viewer {\n    ...Layout_viewer\n    id\n  }\n}\n\nfragment Layout_viewer on Viewer {\n  Post(id: \"cj8kjyidn2odi0136i8v87a2a\") {\n    name\n    id\n  }\n}\n"
+  "text": "query Routes_Query {\n  viewer {\n    ...Layout_viewer\n    id\n  }\n}\n\nfragment Layout_viewer on Viewer {\n  Post(id: \"cj8kjyidn2odi0136i8v87a2a\") {\n    name\n    id\n  }\n}\n"
 };
 
 module.exports = batch;

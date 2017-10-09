@@ -9,6 +9,8 @@ import NavigationDrawer from 'react-md/lib/NavigationDrawers'
 
 class Layout extends Component {
   render() {
+
+    debugger;
     return(
       <NavigationDrawer
         toolbarTitle="Widget List"
